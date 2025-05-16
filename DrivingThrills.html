@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DrivingThrills — Harpreet Johal</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ProjectStyles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="top">
+      <div>
+        <h1>Harpreet Johal</h1>
+        <p class="role">Game Programmer</p>
+      </div>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a class="resume-btn" href="#" download>Resume</a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Cover + Title -->
+  <div class="project-hero">
+      <!-- Go Back -->
+  <a class="back" href="index.html"><i class="fas fa-chevron-left"></i>Go Back</a>
+  
+    <video class="DrivingThrills-video" autoplay muted loop playsinline>
+        <source src="assets/DrivingThrills_Intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h1 class="outline-shadow">Driving Thrills</h1>
+  </div>
+
+  <!-- About & Project Info -->
+  <div class="project-details">
+    <div class="about">
+      <h2>About</h2>
+      <p>
+        Open world game that has action game and adventure. This 3D game having Indian cars combines the best of free roam game dynamics 
+        with immersive crime simulator action. 
+        this gangster game offers a thrilling urban adventure filled stunts, vehicles, challenges, game missions and cheats.
+      </p>
+    </div>
+    <div class="info">
+      <h2>Project Info</h2>
+      <ul>
+        <li><i class="fas fa-user"></i>Role: Lead Game Programmer</li>
+        <li><i class="fas fa-users"></i>Team Size: 4 - 6</li>
+        <li><i class="fas fa-clock"></i>Time frame: 1 year</li>
+        <li><i class="fas fa-wrench"></i>Engine: Unity (C#)</li>
+      </ul>
+    </div>
+  </div>
+<div class="image-wrapper">
+    <a href="https://play.google.com/store/apps/details?id=com.UnderdogStudio.DrivingThrills&pcampaignid=web_share" target="_blank">
+      <img src="assets/PlaystoreIcon.png" alt="Play Game">
+    </a>
+  </div>
+  <!-- Introduction -->
+  <section class="Heading">
+    <h2>Introduction</h2>
+    <p>
+      It’s a open world game highly optimized for mobile made at underdogs studio. 
+      The team consists of 1 Programmer, 1 Designer, 2-3 artists. 
+      As a Lead programmer of the project I was responsible for smooth gameplay, 
+      unique systems provided by the Designer with stable fps on mobile that challenged me to dig deep and come up with creative, 
+      optimized solutions. Running a project solo can be super tough with all kinds of challenges thrown your way—but hey, the reward makes it totally worth it. 
+      That said, I love working with a team... it’s just way more fun! to achieve something together who shares the same understanding.
+    </p>
+  </section>
+  <section class="Heading">
+    <h2>Traffic System</h2>
+    <video class="traffic-video" autoplay muted loop playsinline>
+      <source src="assets/TrafficSystem.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p>
+      <p>
+        A modular system that populates and manages AI vehicles along waypoint paths,
+         adapting density and performance to user graphics settings.
+      </p>
+  
+    <section class="tech-notes">
+        <h3>Core Responsibilities:</h3>
+        <ul>
+          <li>
+           <strong>Graphics-Driven Density</strong>
+      <ul>
+        <li>Reads <code>Settings.GraphicsIndex</code> to select from <code>TrafficsSettings[]</code></li>
+        <li>Configurable <code>MaxSpawnCount</code> and <code>SpaceBetweenVehicles</code> per quality level</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Object Pooling</strong>
+      <ul>
+        <li>Pre-instantiates <code>VehicleAIs</code> and stores them in <code>vehiclePool</code></li>
+        <li>Reuses pooled vehicles via <code>GetPooledVehicle()</code></li>
+      </ul>
+    </li>
+    <li>
+      <strong>Waypoint-Based Spawning</strong>
+      <ul>
+        <li>Finds all <code>WaypointPath</code> instances within <code>MaxSpawnRadius</code> of the player</li>
+        <li>Samples their waypoints at intervals of <code>spaceBetweenVehicles</code> to evenly distribute spawns</li>
+        <li>Computes spawn <code>rotation</code> from current → next waypoint for natural orientation</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Player-Vehicle Interaction</strong>
+      <ul>
+        <li>Removes a vehicle AI from the pool when the player enters via the <code>OnPlayerEnterAiCar</code> event</li>
+        <li>On explosion of the vehicle AI, updates the pool to replenish traffic</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Performance Culling</strong>
+      <ul>
+        <li>To make sure traffic dosen't spawn in front of the player they only spawn far away or behind the player 
+            likewise vehicle AIs that wander out of range or fall behind the player after a set distance are despawned</li>
+      </ul>
+    </li>
+        </ul>
+      </section>    </p>
+  </section>
+
+  <section class="Heading">
+    <h2>Police System</h2>
+    <video class="police-video" autoplay muted loop playsinline>
+      <source src="assets/DrivingThrills_PoliceSystem.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p>
+      In this system, players build up Wanted Stars (0 to 5) based on the crimes they commit.
+      The more chaos you cause, the more stars you attract. Once your crime rate crosses a threshold, you earn a star—and with it comes trouble: sirens, police cars, 
+      and police NPCs chasing you down.     
+      <br>
+      Only way out is to escape the police.
+    </p>
+
+    <section class="tech-notes">
+      <h3>Tech Notes:</h3>
+      <ul>
+        <li>
+          <strong>Event-Driven Architecture:</strong>
+          It’s all powered by <code>WantedStarSystem</code> that tracks your wanted level and fires events when crime is committed such as 
+          <code>OnWantedStarAdded(int wantedLevel)</code> and <code>OnResetWantedStar()</code>. The <code>WantedLevelManager</code> ties it all together—handling crime thresholds, triggering police spawners, and cleaning up when you escape or get busted.
+        </li>
+        <li>
+          <strong>Object Pooling:</strong> performant instantiation using delays and recycling of police entities when escaping.
+        </li>
+        <li>
+          <strong>Adaptive Spawning:</strong>
+          <ul>
+            <li><strong>Singleton Persistence:</strong> Inherits from <code>MonoBehaviourSingletonPersistentNoLoad</code> for scene changes</li>
+            <li><strong>Coroutines for Smooth Performance:</strong> Delays in both spawning and death cleanup</li>
+            <li><strong>NavMesh SamplePosition:</strong> Spawn Police AIs at a random position in the navMesh area such as road to avoid overlaps on obstacle and gives clear paths to player.</li>
+            <li><strong>Player-View Exclusion:</strong> Simple dot-product trick keeps Ais spawning behind the player or at a far distance.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="Heading">
+    <h2>Others</h2>
+    <img class="Image-moreFeatures"
+      src="assets/DrivingThrills_Features.png"   <!-- path to your image file -->
+    </img>
+    
+    <section class="tech-notes">
+      <h3> There are others features like:</h3>
+      <ul>
+        <li><strong>Clothes System</strong> (for wardrobe and shop)</li>
+        <li><strong>Passenger Pick-and-Drop</strong> (for bus, auto rickshaw, etc.)</li>
+        <li><strong>Tutorial System</strong></li>
+        <li><strong>Stunts</strong> (for bikes and 4 wheelers)</li> 
+        <li><strong>Cheat Systems using mobile phone</strong> (supports all vehicles)</li>
+        <li><strong>Football Arena</strong></li>
+        <p>and more…</p> 
+      </ul>
+  </section>
+</body>
+</html>

@@ -1,0 +1,269 @@
+    :root {
+      --bg: #0d0d0d;
+      --mint: #9eeceb;
+      --pink: #f5a3b0;
+      --text-light: #e0e0e0;
+      --text: #c0c0c0;
+      --card-bg: #1a1a1a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text-light);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    
+    
+    h1.outline-shadow {
+      color: #fff; /* fill color */
+      text-shadow:
+        /* top-left */     -2px -2px 0 #000,
+        /* top-right */     2px -2px 0 #000,
+        /* bottom-left */  -2px  2px 0 #000,
+        /* bottom-right */  2px  2px 0 #000;
+    }
+
+    /* --- Header (same as index.html) --- */
+    header {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      display: grid;
+      gap: 3rem;
+    }
+    header .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      color: var(--mint);
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    header .role {
+      font-size: 1.25rem;
+      font-weight: 300;
+      margin-top: 0.25rem;
+    }
+    header .socials {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    header .socials a {       
+      color: var(--pink);
+      font-size: 1.5rem;
+      transition: transform .2s;
+    }    
+    .socials a:hover {
+      transform: scale(1.1);
+    }
+    header .resume-btn {
+      border: 2px solid var(--pink);
+      padding: .5rem 1rem;
+      border-radius: .25rem;
+      font-size: 1rem;
+      color: var(--pink);
+      transition: background .2s, color .2s;
+    }    
+    .resume-btn:hover {
+      background: var(--pink);
+      color: var(--bg);
+    }
+
+    /* space between next lines */
+    .spaced-line {
+      margin-bottom: 8px;
+    }
+
+    /* --- Go Back link --- */
+    .back {
+      
+      display: inline-block;
+      margin: 0rem 0rem 1rem 0rem;
+      color: var(--pink);
+      text-decoration: underline;
+      font-style: un;
+      font-size: 1.5rem;
+    }
+    .back i { margin-right: .3rem; }
+
+    /* --- Hero Cover --- */
+    .project-hero {
+      position: relative;
+      margin: 1rem auto;
+      max-width: 1000px;
+    }
+    .project-hero iframe{
+      margin: 0.5rem 0rem;
+    }
+    .project-hero .Cover {
+      width: 100%;
+      height: 100%;
+      background: center/cover no-repeat;
+      border-radius: .5rem;
+      background-position: center 20%;
+    }
+    .project-hero .DrivingThrills-video {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: .5rem;
+      display: block;
+      transform: scale(1);
+    }
+    .project-hero .FlyMeHard-Video{
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: .5rem;
+      display: block;
+      transform: scale(1);
+    }
+    .project-hero h1 {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      color: var(--mint);
+      font-size: 2rem;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+    }
+
+    /* --- About / Info grid --- */
+    .project-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .project-details > div {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: .5rem;
+    }
+    .project-details h2 {
+      color: var(--text-light);
+      font-size: 1.25rem;
+      margin-bottom: .75rem;
+    }
+    .project-details p {
+      color: var(--text);
+      font-size: .95rem;
+    }
+    .project-details ul {
+      list-style: none;
+      color: var(--text);
+      font-size: .95rem;
+    }
+    .project-details li {
+      display: flex;
+      align-items: center;
+      margin-bottom: .5rem;
+    }
+    .project-details li i {
+      margin-right: .5rem;
+      color: var(--pink);
+    }
+
+    /* --- Introduction --- */
+    .Heading {
+      max-width: 1000px;
+      margin: 2rem auto 3rem;
+      padding: 0 1rem;
+    }
+    .Heading h2 {
+      color: var(--mint);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .Heading p {
+      color: var(--text);
+      font-size: 1.15rem;
+    }
+    .Heading .police-video{
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: .5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    
+    .Heading .traffic-video{
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: .5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .Heading .Image-moreFeatures {
+      width: 100%;        /* make it responsive */
+         /* cap its size if you like */
+      height: auto;       /* preserve aspect ratio */
+      display: block;     /* remove those little inline gaps */
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .image-wrapper {
+      display: flex;
+      justify-content: center;  /* horizontal centering */
+      margin: 2rem 0;            /* space above/below */
+    }
+    .image-wrapper img {
+      width: 300px;
+      border-radius: 10px;
+      display: block;
+    }
+        /* Tech Notes CSS */
+    .tech-notes {
+      max-width: 800px;
+      padding: 1rem 0rem;
+      border-radius: 0.5rem;
+      color: var(--text);
+
+    }
+    .tech-notes h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      color: var(--text-light);
+    }
+    .tech-notes ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      font-size: 1.1rem;
+      color: var(--text);
+
+    }
+    .tech-notes li {
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      color: var(--text);
+
+    }
+    .tech-notes li ul {
+      margin-top: 0.5rem;
+      list-style: circle;
+      padding-left: 1.25rem;
+      color: var(--text);
+    }
+    .tech-notes code {
+      color: #f5a3b0; /* secondary accent */
+      padding: 0.1em 0.3em;
+      border-radius: 0.3em;
+      font-size: 1em;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 700px) {
+      .project-details { grid-template-columns: 1fr; }
+      .project-hero .hero-img { height: 250px; }
+    }

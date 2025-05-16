@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TunningSamurai — Harpreet Johal</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ProjectStyles.css">
+
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="top">
+      <div>
+        <h1>Harpreet Johal</h1>
+        <p class="role">Game Programmer</p>
+      </div>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a class="resume-btn" href="#" download>Resume</a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Cover + Title -->
+  <div class="project-hero">
+      <!-- Go Back -->
+  <a class="back" href="index.html"><i class="fas fa-chevron-left"></i>Go Back</a>
+
+       <video class="FlyMeHard-Video" autoplay muted loop playsinline>
+        <source src="assets/FlymeHardIntro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h1 class="outline-shadow">Fly Me Hard</h1>
+  </div>
+
+  <!-- About & Project Info -->
+  <div class="project-details">
+    <div class="about">
+      <h2>About</h2>
+      <p>
+        Fly Me Hard is a fast-paced, physics-driven action game where you play as a jetpack-wielding cowboy fighting through waves of goblins, 
+        skeletons, and magical foes across medieval landscapes. As the Sole Developer, I built core mechanics such as active ragdoll physics, 
+        dynamic enemy AI, and more.
+      </p>
+    </div>
+    <div class="info">
+      <h2>Project Info</h2>
+      <ul>
+        <li><i class="fas fa-user"></i>Role: Indie Developer</li>
+        <li><i class="fas fa-users"></i>Team Size: 1</li>
+        <li><i class="fas fa-clock"></i>Time frame: 8 months</li>
+        <li><i class="fas fa-wrench"></i>Engine: Unity (C#)</li>
+      </ul>
+    </div>
+  </div>
+
+<div class="image-wrapper">
+    <a href="https://www.crazygames.com/game/fly-me-hard" target="_blank">
+      <img src="assets/Play_CG_Dark.png" alt="Play Game">
+    </a>
+  </div>
+
+  <!-- Introduction -->
+  <section class="Heading">
+    <h2>Introduction</h2>
+    <p class ="spaced-line">
+      This project began as a personal learning experiment—I just wanted to get a better grasp of physics concepts in Unity. 
+      But as development progressed, I stumbled upon a pretty unique mechanic that felt like it could evolve into a full-fledged game.
+    </p>
+    <p class ="spaced-line">
+      As a solo developer, I handled everything from programming and design to art direction. This gave me a deeper appreciation for the challenges faced in each area—especially how tough design and artistic decisions can be. The experience gave me a holistic understanding of game production, 
+      which later helped me collaborate and communicate more effectively with my team at work.  
+    </p>
+    <p class ="spaced-line">
+      To top it off, the game was picked up by CrazyGames publishers, 
+      and my inbox was soon filled with feedback and love from players—which was an incredibly rewarding moment.
+    </p>
+  </section>
+
+
+  
+  <section class="Heading">
+    <h2>Active ragdoll</h2>
+    <video class="police-video" autoplay muted loop playsinline>
+      <source src="assets/FlyMeHard_ActiveRadgoll.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p>
+      Games like human fall flat, 
+      Gang beasts uses this mechanic to create hilarious, unpredictable physics based moments and
+      I wanted kind of same fun interative experience for my game.
+
+      Characters use Configurable Joints between each bone, with proper spring and damping settings after lot of trail to follow animator pose
+      but with flexible physics based movement.
+      
+
+    </p>
+  </section>
+
+  <section class="Heading">
+    <h2>Multi-Scene Workflow System</h2>
+    <img class="Image-moreFeatures"
+      src="assets/MultiSceneWorkFlow.png"   <!-- path to your image file -->
+    </img>
+    <p>
+        To improve loading efficiency and make the development pipeline smoother, 
+        I implemented a multi-scene workflow in my game. 
+        Instead of loading entire levels as a single scene, I broke the game into modular scene groups:
+    </p>
+    <section class = "tech-notes">
+        <ul>
+          <li><strong>Bootstrapper</strong>: Handles persistent systems (e.g. Api handlers,core managers)</li>
+          <li><strong>BaseGame</strong>: Core gameplay logic, loaded additively across all levels</li>
+          <li><strong>UI</strong>: Persistent UI elements (menus, HUD)</li>
+          <li><strong>Level_x</strong>: Specific level content</li>
+        </ul>
+     <section>
+
+      <p>
+        Using this system, I built a custom <strong>Scene Group Loader Tool</strong>
+        that allows quick switching between levels directly in the editor. This gave me:
+      </p>
+      <section class = "tech-notes">
+        <ul>
+          <li><strong>Faster iteration</strong> – Test specific levels without restarting the whole game</li>
+          <li><strong>Better memory management</strong> – Only active scenes are kept in memory</li>
+          <li><strong>Scalable structure</strong> – Easy to add new levels and features without breaking core systems</li>
+          <li><strong>Smaller scene sizes</strong> – Scenes are split by responsibility, improving load speed</li>
+        </ul>
+      <section>
+  </section>
+
+</body>
+</html>

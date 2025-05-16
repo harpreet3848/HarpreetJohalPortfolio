@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Dev Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --mint: #9eeceb;
+      --pink: #f5a3b0;
+      --text-light: #e0e0e0;
+      --text: #c0c0c0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text-light);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.4;
+    }
+    a { text-decoration: none; }
+
+    /* ===== Intro Section ===== */
+    .intro {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+      display: grid;
+      gap: 3rem;
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .intro h1 {
+      color: var(--mint);
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .role {
+      font-size: 1.25rem;
+      font-weight: 300;
+      margin-top: 0.25rem;
+    }
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .socials a {
+      color: var(--pink);
+      font-size: 1.5rem;
+      transition: transform .2s;
+    }
+    .socials a:hover {
+      transform: scale(1.1);
+    }
+    .resume-btn {
+      border: 2px solid var(--pink);
+      padding: .5rem 1rem;
+      border-radius: .25rem;
+      font-size: 1rem;
+      color: var(--pink);
+      transition: background .2s, color .2s;
+    }
+    .resume-btn:hover {
+      background: var(--pink);
+      color: var(--bg);
+    }
+    .bottom {
+      display: flex;              /* flex container */
+      flex-direction: column;     /* stack vertically */
+      align-items: center;        /* center items horizontally */
+      text-align: center;         /* center the tagline text */
+      gap: 1.5rem;                /* space between picture & tagline */
+    }
+    .profile-pic {
+      flex-shrink: 0;
+      width: 180px;
+      height: 180px;
+      border: 4px solid var(--pink);
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .tagline {
+      font-size: 1.25rem;
+      max-width: 600px;
+      color: var(--text);
+    }
+
+    /* ===== Projects Section ===== */
+    .projects {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      text-align: center;  
+    }
+    .projects h2 {
+      color: var(--mint);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: #1a1a1a;
+      border-radius: .5rem;
+      overflow: hidden;
+      text-decoration: none;        /* no underline */
+      transition: box-shadow .2s;   /* animate the outline */
+      cursor: pointer;              /* show pointer on hover */
+    }
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 ratio */
+      background-size: cover;
+      background-position: center;
+    }
+    .project-card:hover {
+      box-shadow: 0 0 0 2px var(--pink);
+    }
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+      padding: .5rem;
+      display: flex;
+      gap: 1rem;
+      color: var(--text-light);
+      font-size: .875rem;
+      align-items: center;
+    }
+    .image-overlay .icon {
+      display: flex;
+      align-items: center;
+      gap: .25rem;
+    }
+    .info {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .info .text h3 {
+      margin-bottom: .25rem;
+      color: var(--text-light);
+      font-size: 1.25rem;
+    }
+    .projects-grid .text p.description {
+     margin-top: 0.5rem;
+     font-size: 0.9rem;
+     color: var(--text);
+     line-height: 1.3;
+    }
+
+    .info .text p {
+      margin: 0;
+      font-size: .9rem;
+      color: var(--text);
+    }
+    .arrow {
+      color: var(--pink);
+      font-size: 1.5rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .intro h1 { font-size: 2.5rem; }
+      .profile-pic { width: 140px; height: 140px; }
+      .projects h2 { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Intro -->
+  <header class="intro">
+    <div class="top">
+      <div>
+        <h1>Harpreet Johal</h1>
+        <p class="role">Game Programmer</p>
+      </div>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a class="resume-btn" href="#" download>Resume</a>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="profile-pic">
+        <img src="assets/profile.jpg" alt="Harpreet Johal">
+      </div>
+      <p class="tagline">
+        I build fun gameplay systems and love solving tricky problems with clean, efficient code. 
+        Always up for new challenges and making games feel great to play.
+      </p>
+    </div>
+  </header>
+
+  <!-- Projects -->
+  <section class="projects">
+    <h2>Production Game Projects</h2>
+    <div class="projects-grid">
+
+    <!-- Card 1 -->
+    <a href="DrivingThrills.html" class="project-card">
+      <div class="image-wrapper"
+           style="background-image:url('assets/DrivingThrills_Profile.jpg')">
+        <div class="image-overlay">
+          <div class="icon"><i class="fas fa-users"></i><span>5</span></div>
+          <div class="icon"><i class="fas fa-clock"></i><span>1 year</span></div>
+          <div class="icon"><i class="fas fa-wrench"></i><span>Unity C#</span></div>
+          <div class="icon"><i class="fab fa-android"></i><span>Android</span></div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="text">
+          <h3>Driving Thrills (2025)</h3>
+          <p>Lead Game Programmer</p>
+          <p class="description">
+             Open world game that has action game and adventure. This 3D game having Indian cars combines the best of free roam game dynamics 
+             with immersive crime simulator action. 
+             this gangster game offers a thrilling urban adventure filled stunts, vehicles, challenges, game missions and cheats.
+          </p>
+        </div>
+        <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </a>
+
+    <!-- Card 2 -->
+    <a href="Mukti.html" class="project-card">
+        <div class="image-wrapper"
+            style="background-image:url('assets/Mukti_Profiles.png')">
+          <div class="image-overlay">
+            <div class="icon"><i class="fas fa-users"></i><span>14 - 20</span></div>
+            <div class="icon"><i class="fas fa-clock"></i><span>3 months</span></div>
+            <div class="icon"><i class="fas fa-wrench"></i><span>Unreal C++</span></div>
+            <div class="icon"><i class="fas fa-gamepad"></i><span>PS5</span></div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="text">
+            <h3>Mukti (2024)</h3>
+            <p>Game Programmer</p>
+            <p class="description">
+              Mukti is a first-person exploration game set against the rich tapestry of Indian heritage, 
+              offering players a deep dive into a mystery that bridges the past with the present.
+            </p>
+          </div>
+          <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+    </a>
+
+    <!-- Card 4 -->
+    <a href="StoryPix.html" class="project-card">
+      <div class="image-wrapper"
+           style="background-image:url('assets/StoryPix_Profile2.png')">
+        <div class="image-overlay">
+          <div class="icon"><i class="fas fa-users"></i><span>12</span></div>
+          <div class="icon"><i class="fas fa-clock"></i><span>1.5 years</span></div>
+          <div class="icon"><i class="fas fa-wrench"></i><span>Unity</span></div>
+          <div class="icon"><i class="fab fa-android"></i><span>Android</span></div>
+
+        </div>
+      </div>
+      <div class="info">
+        <div class="text">
+          <h3>StoryPix (2023)</h3>
+          <p>Game Programmer</p>
+          <p class="description">
+            A narrative based story game where you not only read through the story but is also interactive where you can make a choice and decide the path of the story.
+            You can lead the story as your choices can decide the end of the story.
+          </p>
+        </div>
+        <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="FlyMeHard.html" class="project-card">
+      <div class="image-wrapper"
+           style="background-image:url('assets/FlyMeHard_Profile.png')">
+        <div class="image-overlay">
+          <div class="icon"><i class="fas fa-users"></i><span>1</span></div>
+          <div class="icon"><i class="fas fa-clock"></i><span>8 months</span></div>
+          <div class="icon"><i class="fas fa-wrench"></i><span>Unity (C#)</span></div>
+          <div class="icon"><i class="fab fa-chrome"></i><span>WebGL</span></div> 
+        </div>
+      </div>
+      <div class="info">
+        <div class="text">
+          <h3>Fly me Hard (2025)</h3>
+          <p>Indie Developer (Crazy games, Android)</p>
+          <p class="description">
+            Fly Me Hard is a fast-paced, physics-driven action game where you play as a jetpack-wielding cowboy fighting through waves of goblins, 
+            skeletons, and magical foes across medieval landscapes. As the Sole Developer, I built core mechanics such as active ragdoll physics, 
+            dynamic enemy AI, and more.
+          </p>
+        </div>
+        <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </a>
+    <!-- Card 3 -->
+    <a href="FlyingMan.html" class="project-card">
+      <div class="image-wrapper"
+           style="background-image:url('assets/FlyingMan_Profile.png')">
+        <div class="image-overlay">
+          <div class="icon"><i class="fas fa-users"></i><span>1</span></div>
+          <div class="icon"><i class="fas fa-clock"></i><span>8 months</span></div>
+          <div class="icon"><i class="fas fa-wrench"></i><span>Unity (C#)</span></div>
+          <div class="icon"><i class="fab fa-chrome"></i><span>WebGL</span></div> 
+        </div>
+      </div>
+      <div class="info">
+        <div class="text">
+          <h3>Flying man (2022)</h3>
+          <p>Game Programmer</p>
+          <p class="description">
+            Fly Me Hard is a fast-paced, physics-driven action game where you play as a jetpack-wielding cowboy fighting through waves of goblins, 
+            skeletons, and magical foes across medieval landscapes. As the Sole Developer, I built core mechanics such as active ragdoll physics, 
+            dynamic enemy AI, and more.
+          </p>
+        </div>
+        <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </a>
+            <!-- Card 3 -->
+    <a href="TunningSamurai.html" class="project-card">
+      <div class="image-wrapper"
+           style="background-image:url('assets/TunningSamurai_Profile.png')">
+        <div class="image-overlay">
+          <div class="icon"><i class="fas fa-users"></i><span>1</span></div>
+          <div class="icon"><i class="fas fa-clock"></i><span>8 months</span></div>
+          <div class="icon"><i class="fas fa-wrench"></i><span>Unity (C#)</span></div>
+          <div class="icon"><i class="fab fa-chrome"></i><span>WebGL</span></div> 
+        </div>
+      </div>
+      <div class="info">
+        <div class="text">
+          <h3>TunningSamurai (2023)</h3>
+          <p>Indie Developer (Crazy games, Android)</p>
+          <p class="description">
+            Fly Me Hard is a fast-paced, physics-driven action game where you play as a jetpack-wielding cowboy fighting through waves of goblins, 
+            skeletons, and magical foes across medieval landscapes. As the Sole Developer, I built core mechanics such as active ragdoll physics, 
+            dynamic enemy AI, and more.
+          </p>
+        </div>
+        <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </a>
+    </div>
+    
+  </section>
+</body>
+</html>
