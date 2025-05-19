@@ -56,6 +56,7 @@
         <li><i class="fas fa-users"></i>Team Size: 4 - 6</li>
         <li><i class="fas fa-clock"></i>Time frame: 1 year</li>
         <li><i class="fas fa-wrench"></i>Engine: Unity (C#)</li>
+        <li><i class="fab fa-android"></i>Platform: Android</li>
       </ul>
     </div>
   </div>
@@ -94,15 +95,13 @@
           <li>
            <strong>Graphics-Driven Density</strong>
       <ul>
-        <li>Reads <code>Settings.GraphicsIndex</code> to select from <code>TrafficsSettings[]</code></li>
-        <li>Configurable <code>MaxSpawnCount</code> and <code>SpaceBetweenVehicles</code> per quality level</li>
+        <li>It reads <code>Settings.GraphicsIndex</code> to Configurable <code>MaxSpawnCount</code> per quality level</li>
       </ul>
     </li>
     <li>
       <strong>Object Pooling</strong>
       <ul>
-        <li>Pre-instantiates <code>VehicleAIs</code> and stores them in <code>vehiclePool</code></li>
-        <li>Reuses pooled vehicles via <code>GetPooledVehicle()</code></li>
+        <li>Pre-instantiates <code>VehicleAIs</code> and stored them in <code>vehiclePool</code> and Reuses pooled vehicles when escaping</li>
       </ul>
     </li>
     <li>

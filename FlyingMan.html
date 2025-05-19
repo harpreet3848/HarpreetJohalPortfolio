@@ -32,10 +32,10 @@
   <a class="back" href="index.html"><i class="fas fa-chevron-left"></i>Go Back</a>
 
        <video class="FlyMeHard-Video" autoplay muted loop playsinline>
-        <source src="assets/FlymeHardIntro.mp4" type="video/mp4">
+        <source src="assets/FlyingMan_Intro2.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <h1 class="outline-shadow">Fly Me Hard</h1>
+    <h1 class="outline-shadow">Flying man</h1>
   </div>
 
   <!-- About & Project Info -->
@@ -43,83 +43,51 @@
     <div class="about">
       <h2>About</h2>
       <p>
-        Fly Me Hard is a fast-paced, physics-driven action game where you play as a jetpack-wielding cowboy fighting through waves of goblins, 
-        skeletons, and magical foes across medieval landscapes. As the Sole Developer, I built core mechanics such as active ragdoll physics, 
-        dynamic enemy AI, and more.
+        A fun and fast-paced hyper-casual game where you have the thrilling ability to fly and compete against AI rivals across a variety of dynamic maps. Each level brings new challenges, and a rewarding system keeps you coming back for more!
       </p>
     </div>
     <div class="info">
       <h2>Project Info</h2>
       <ul>
-        <li><i class="fas fa-user"></i>Role: Indie Developer</li>
-        <li><i class="fas fa-users"></i>Team Size: 1</li>
-        <li><i class="fas fa-clock"></i>Time frame: 8 months</li>
+        <li><i class="fas fa-user"></i>Role: Game developer</li>
+        <li><i class="fas fa-users"></i>Team Size: 4</li>
+        <li><i class="fas fa-clock"></i>Time frame: 3 months</li>
         <li><i class="fas fa-wrench"></i>Engine: Unity (C#)</li>
+        <li><i class="fab fa-android"></i>Platform: Android</li>
       </ul>
     </div>
   </div>
 
-<div class="image-wrapper">
-    <a href="https://www.crazygames.com/game/fly-me-hard" target="_blank">
-      <img src="assets/Play_CG_Dark.png" alt="Play Game">
-    </a>
-  </div>
-
   <!-- Introduction -->
   <section class="Heading">
-    <h2>Introduction</h2>
+    <h2>Project Overview</h2>
     <p class ="spaced-line">
-      This project began as a personal learning experiment—I just wanted to get a better grasp of physics concepts in Unity. 
-      But as development progressed, I stumbled upon a pretty unique mechanic that felt like it could evolve into a full-fledged game.
-    </p>
-    <p class ="spaced-line">
-      As a solo developer, I handled everything from programming and design to art direction. This gave me a deeper appreciation for the challenges faced in each area—especially how tough design and artistic decisions can be. The experience gave me a holistic understanding of game production, 
-      which later helped me collaborate and communicate more effectively with my team at work.  
+      This is one of the exciting hyper-casual games I had the opportunity to work on during my time at Underdog Studio, in collaboration with a partnered mobile game publisher.
+      The core concept of the game revolves around high-speed downhill racing on high mountain slopes, 
+      where players must build momentum, take strategic jumps off cliffs, 
+      and glide through the air to outpace AI opponents and reach the finish line.
     </p>
     <p class ="spaced-line">
-      To top it off, the game was picked up by CrazyGames publishers, 
-      and my inbox was soon filled with feedback and love from players—which was an incredibly rewarding moment.
-    </p>
-  </section>
-
-
-  <section class="Heading">
-    <h2>Grid Based Optimization</h2>
-    <img class="Image-moreFeatures"
-      src="assets/Grid Based Optimization.png"   <!-- path to your image file -->
-    </img>
-    <p class ="spaced-line">
-      In some levels, there are 15–25 enemies, each having multiple rigidbodies and joints with IK animations, causing performance bottlenecks—especially on the web platform.
+      The game focuses on fast-paced, physics-driven gameplay with short, satisfying races perfect for mobile audiences. 
     </p>
     <p class ="spaced-line">
-      To solve this, I built a custom grid-based optimization system that automatically stores playable objects based on their position in the grid. Each cell contains playable objects (enemies, props, etc.) and they are only activated when the player enters the cell, as shown in the picture above.
-    </p>
-    <p class ="spaced-line">
-      Red cells in the grid represent unvisited areas (objects are inactive), and green areas represent visited ones (objects are active).
-    </p>
-  </section>
-
-
-    <section class="Heading">
-    <h2>Others</h2>
-    <p>
-
-      There are lot of others systems as well made to polish and finish the game
-
-      <section class = "tech-notes">
-        <ul>
-          <li><strong>Boss Level</strong>
-          <li><strong>Physics based AIs enemies</strong>
-          <li><strong>Ik animations</strong> 
-          <li><strong>Revive System</strong> 
-          <li><strong>Slow motion effects</strong> 
-          <li><strong>Score chasing and rank system</strong> 
-          <li><strong>Game Analytics</strong> 
-          <li><strong>And lot more do play web version above to know more</strong> 
-        </ul>
-      <section>
-
-    </p>
+       This project was handed to me during its prototype stage, which meant a lot of core systems had to be reworked, polished, and brought to production quality. 
+       I closely collaborated with designers throughout development to improve the feel, flow, and overall gameplay experience.
+       These are some of the features I remember working on ->
+        <section class = "tech-notes">
+      <ul>
+        <li><strong>Player Mechanics:</strong> I worked on responsive movement system, momentum based flying, mid air control</li>
+        <li><strong>AI rivals:</strong> Worked on AI opponents that uses same movement mechanics as the player, using inheritance with shared physics behavior,
+                                         along with basic AI navigation controls with some constraints</li>
+        <li><strong>Gameplay loop</strong>
+        <li><strong>reward and engagement systems</strong> 
+        <li><strong>Level Mechanics</strong> 
+        <li><strong>Game Analytics</strong> 
+        <li><strong>Firebase remote configurations</strong> 
+        <li><strong>Ads Integration</strong> 
+          <li><strong>and more</strong> 
+      </ul>
+    <section>
   </section>
     <!-- <section class="tech-notes">
       <h3>Tech Notes:</h3>
